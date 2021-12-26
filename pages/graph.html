@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graph</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <script src='jquery.maskedinput.min.js'></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker_to" ).datepicker();
+  } );
+
+  $( function() {
+    $( "#datepicker_from" ).datepicker();
+  } );
+  </script>
+  <style>
+  body {
+  padding: 15px;
+}
+
+.choose_date_from{
+  background-color: rgb(92,184,92);
+  position: absolute;
+  margin-left: 450px;
+  margin-top: -34px;
+  height: 33px;
+  outline:none !important;
+  width: 115px;
+}
+.choose_date_to{
+  background-color: rgb(92,184,92);
+  position: absolute;
+  margin-left: 700px;
+  margin-top: -34px;
+  height: 33px;
+  outline:none !important;
+  width: 115px;
+}
+p.choose_date_from {
+  color: white;
+}
+.choose_date_from input{
+  background-color: rgb(92,184,92);
+  outline:none !important;
+  border:blue;
+  cursor: pointer;
+}
+p.choose_date_to{
+  color: white;
+}
+.choose_date_to input{
+  background-color: rgb(92,184,92);
+  outline:none !important;
+  border:blue;
+  cursor: pointer;
+}
+button[type="submit"]{
+  position: absolute;
+  margin-left: 900px;
+  margin-top: -34px;
+  border-color: rgb(92,184,92);
+  border-radius: 0;
+  color: rgb(92,184,92);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+button[type="submit"]:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: rgb(92,184,92);
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+button[type="submit"]:hover {
+  color: #fff;
+}
+button[type="submit"]:hover:after {
+  width: 110%;
+}
+.picker{
+  position: absolute;
+  margin-left: 150px;
+  margin-top: -34px;
+}
+  </style>
+</head>
+<body>
+  <a type="button" href = "../index.php" class="btn btn-success btn-circle btn-sm"><i class="bi bi-house-door" style = "font-size:15px; color: white;"></i>  Home
+  </a>
+  <form action = "graph.php" method="post">
+    <div class = "picker">
+    <select class="selectpicker"  data-style="btn-success" name = "taskValute">
+      <option value="R01010">  AUD Австралийский доллар                      </option>
+      <option value="R01020A"> AZN Азербайджанский манат                     </option>
+      <option value="R01035">  GBP Фунт стерлингов Соединенного королевства  </option>
+      <option value="R01060">  AMD Армянский драм                            </option>
+      <option value="R01090B"> BYN Белорусский рубль                         </option>
+      <option value="R01100">  BGN Болгарский лев                            </option>
+      <option value="R01115">  BRL Бразильский реал                          </option>
+      <option value="R1135">   HUF Венгерский форинт                         </option>
+      <option value="R1200">   HKD Гонконгский доллар                        </option>
+      <option value="R1215">   DKK Датская крона                             </option>
+      <option value="R01235">  USD Доллар США                                </option>
+      <option value="R01239">  EUR Евро                                      </option>
+      <option value="R01270">  INR Индийский рупий                           </option>
+      <option value="R01335">  KZT Казахстанский тенге                       </option>
+      <option value="R01350">  CAD Канадский доллар                          </option>
+      <option value="R01370">  KGS Киргизский сом                            </option>
+      <option value="R01375">  CNY Китайский юань                            </option>
+      <option value="R01500">  MDL Молдавский леей                           </option>
+      <option value="R01535">  NOK Норвежская крона                          </option>
+      <option value="R01565">  PLN Польский злотый                           </option>
+      <option value="R01585F"> RON Румынский лей                             </option>
+      <option value="R01589">  XDR СДР (специальные права заимствования)     </option>
+      <option value="R01625">  SGD Сингапурский доллар                       </option>
+      <option value="R01670">  TJS Таджикский сомони                         </option>
+      <option value="R01700J"> TRY Турецкая лира                             </option>
+      <option value="R01710A"> TMT Новый туркменский манат                   </option>
+      <option value="R01717">  UZS Узбекский сум                             </option>
+      <option value="R01720">  UAH Украинская гривна                         </option>
+      <option value="R01760">  CZK Чешская крона                             </option>
+      <option value="R01770">  SEK Шведская крона                            </option>
+      <option value="R01775">  CHF Швейцарский франк                         </option>
+      <option value="R01810">  ZAR Южноафриканский рэнд                      </option>
+      <option value="R01815">  KRW Вона Республики Корея                     </option>
+      <option value="R01820">  JPY Японская иена                             </option>
+    </select>
+  </div>
+<p class = "choose_date_from">Select Date From: <input type="text" id="datepicker_from" name = "datepicker_from" readonly="readonly" placeholder = "mm/dd/yyyy"></p>
+
+<p class = "choose_date_to">Select Date To: <input type="text" id="datepicker_to" name = "datepicker_to" readonly="readonly" placeholder = "mm/dd/yyyy"></p>
+
+<button type="submit" value="ОТправил сообщение" class="btn btn-default" name = "submitButton">Submit</button>
+</form>
+</body>
+</html>

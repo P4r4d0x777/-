@@ -1,0 +1,25 @@
+[structure]
+
+file[] = index.php
+file[] = CHANGEME.php
+file[] = pages/day.php
+file[] = pages/day.html
+file[] = pages/period.php
+file[] = pages/period.html
+file[] = pages/graph.php
+file[] = pages/graph.html
+file[] = libraryOfExchangeRate/Autoloader.php
+file[] = libraryOfExchangeRate/DailyExchangeRate.php
+file[] = libraryOfExchangeRate/PeriodExchangeRate.php
+file[] = libraryOfExchangeRate/Request.php
+file[] = cache/MemoryCache.php
+file[] = gifs/day.gif
+file[] = gifs/graph.gif
+file[] = gifs/period.gif
+file[] = README.txt
+file[] = strucure.txt
+
+dir[] = libraryOfExchangeRate
+dir[] = pages
+dir[] = cache
+dir[] = pages

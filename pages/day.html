@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <script src='jquery.maskedinput.min.js'></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+  </script>
+  <script>
+    $(".checkbox-menu").on("change", "input[type='checkbox']", function() {
+      $(this).closest("li").toggleClass("active", this.checked);
+    });
+    $(document).on('click', '.allow-focus', function (e) {
+      e.stopPropagation();
+    });
+  </script>
+  <style>
+    body {
+  padding: 15px;
+}
+
+.checkbox-menu li label {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    margin:0;
+    transition: background-color .4s ease;
+}
+.checkbox-menu li input {
+    margin: 0px 5px;
+    top: 2px;
+    position: relative;
+}
+label:hover {
+ background:#eee;
+ cursor:pointer;
+}
+label {
+  color:white;
+}
+.dropdown{
+  position: absolute;
+  margin-left: 150px;
+  margin-top: -34px;
+}
+.choose_date{
+  background-color: rgb(92,184,92);
+  position: absolute;
+  margin-left: 360px;
+  margin-top: -34px;
+  height: 33px;
+  outline:none !important;
+  width: 80px;
+}
+p.choose_date {
+  color: white;
+}
+.choose_date input{
+  background-color: rgb(92,184,92);
+  outline:none !important;
+  border:blue;
+  cursor: pointer;
+}
+button[type="submit"]{
+  position: absolute;
+  margin-left: 600px;
+  margin-top: -34px;
+  border-color: rgb(92,184,92);
+  border-radius: 0;
+  color: rgb(92,184,92);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+button[type="submit"]:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: rgb(92,184,92);
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+button[type="submit"]:hover {
+  color: #fff;
+}
+button[type="submit"]:hover:after {
+  width: 110%;
+}
+
+</style>
+
+</head>
+<body>
+  <a type="button" href = "../index.php" class="btn btn-success btn-circle btn-sm"><i class="bi bi-house-door" style = "font-size:15px; color: white;"></i>  Home
+  </a>
+  <form action = "day.php" method="post">
+  <div class="dropdown">
+    <button class="btn btn-success dropdown-toggle" type="button" 
+            id="dropdownMenu1" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="true">
+            Choose valutes
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
+    
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="AUD" > AUD Австралийский доллар
+        </label>
+      </li>
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="AZN"> AZN Азербайджанский манат
+        </label>
+      </li>
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="GBP"> GBP Фунт стерлингов Соединенного королевства
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="AMD"> AMD Армянский драм
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="BYN">  BYN Белорусский рубль
+        </label>
+      </li>
+
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="BGN"> BGN Болгарский лев
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="BRL"> BRL Бразильский реал
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="HUF"> HUF Венгерский форинт
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="HKD"> HKD Гонконгский доллар
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="DKK"> DKK Датская крона
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="USD"> USD
+          Доллар США
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="EUR"> EUR Евро
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="INR"> INR Индийский рупий
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="KZT"> KZT Казахстанский тенге
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="CAD"> CAD Канадский доллар
+        </label>
+      </li>
+
+      
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="KGS"> KGS Киргизский сом
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="CNY"> CNY Китайский юань
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="MDL"> MDL Молдавский леей
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="NOK"> NOK Норвежская крона
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="PLN"> PLN Польский злотый
+        </label>
+      </li>
+
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="RON"> RON Румынский лей
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="XDR"> XDR СДР (специальные права заимствования)
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="SGD"> SGD Сингапурский доллар
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="TJS"> TJS Таджикский сомони
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="TRY"> TRY Турецкая лира
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="TMT"> TMT Новый туркменский манат
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="UZS"> UZS Узбекский сум
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="UAH"> UAH Украинская гривна
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="CZK"> CZK Чешская крона
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="SEK"> SEK Шведская крона
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="CHF"> CHF Швейцарский франк
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="ZAR"> ZAR Южноафриканский рэнд
+        </label>
+      </li>
+
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="KRW"> KRW Вона Республики Корея
+        </label>
+      </li>
+
+      <li >
+        <label>
+          <input type="checkbox" name = "valutesArr[]" value ="JPY"> JPY Японская иена
+        </label>
+      </li>
+
+    </ul>
+  </div>
+<p class = "choose_date">Select Date: <input type="text" id="datepicker" name = "datepicker" readonly="readonly" placeholder = "mm/dd/yyyy"></p>
+<button type="submit" value="ОТправил сообщение" class="btn btn-default" name = "submitButton">Submit</button>
+</form>
+</body>
+</html>
