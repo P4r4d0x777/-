@@ -79,8 +79,7 @@
 </head> 
   
 <body class="xyz">
-    <p>I want change this file and push him with new commit (just for test)</p>
-    <p>I want change this file and push him with new commit (just for test)</p>
+    <p>I want change this file and push its with new commit (just for test)</p>
     <h1>Obtaining Exchange Rates
       <small>from the central bank of the Russian Federation</small>
     </h1>
