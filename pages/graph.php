@@ -117,6 +117,7 @@ function PrintGraph($__valute, $__dateFrom, $__dateTo, &$__errors)
     </body>
     </html>
     ";
+    
     print $graph;
 }
 }
