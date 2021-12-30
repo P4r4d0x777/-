@@ -15,6 +15,7 @@ class MemoryCache
     /**
      * Создание базы данных
      * 
+     * 
      * @param array $__iniArray - массив настроек БД
      */
     private function CreateDB($__iniArray)
