@@ -171,6 +171,7 @@ function PrintOneDayBD($__valArr, $__date, &$__errors){
         }
     }
     $html .= "</tbody> </table> </body> </html>";
+    
     print $html;
 }
 
