@@ -117,7 +117,6 @@ class PeriodExchangeRate
                 'CurrencyNominal'  => (int)$el->Nominal
             ];
         }
-
         return $result;
     }
 }

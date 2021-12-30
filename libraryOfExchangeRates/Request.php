@@ -3,6 +3,7 @@
 class Request
 {
     private $url;
+    
     const URL_VALUTE_DAILY = 'http://www.cbr.ru/scripts/XML_daily.asp';
 	const URL_VALUTE_PERIOD = 'http://www.cbr.ru/scripts/XML_dynamic.asp';
 

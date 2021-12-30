@@ -3,6 +3,7 @@
 /**
  * Автозагрузка файлов библиотеки
  * 
+ * 
  * @param $__className - имя класса для загрузки
  */
 function autoload($__className)

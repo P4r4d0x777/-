@@ -10,6 +10,7 @@ class DailyExchangeRate
     /**
      * Установка даты 
      * 
+     * 
      * @param $__date - дата d/mY
      */
 	public function setDate(string $date)
