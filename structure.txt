@@ -1,5 +1,6 @@
 [structure]
 
+
 file[] = index.php
 file[] = CHANGEME.php
 file[] = pages/day.php
@@ -18,6 +19,7 @@ file[] = gifs/graph.gif
 file[] = gifs/period.gif
 file[] = README.txt
 file[] = strucure.txt
+
 
 dir[] = libraryOfExchangeRate
 dir[] = pages
