@@ -31,7 +31,6 @@ if (isset($_POST['submitButton'])) {
             $errors['formatDatesPickers'] = "Check the date range: <br>Entered dates must be before today's date (including) and Date From must be before Date TO";
         }
     }
-    
     SendErrorsOrAccess($errors);
 }
 
