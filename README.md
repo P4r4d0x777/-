@@ -49,7 +49,7 @@ _also don't forget to enable apache server and database_
 ; serverName - default:localhost         (хост бд)                 string
 ; userName   - default:root              (имя пользователя бд)     string
 ; password   - default:                  (пароль от бд)            string
-; dbName     - default:PHP_Project 	    (имя СОЗДАВАЕМОЙ бд)      string
+; dbName     - default:PHP_Project 	 (имя СОЗДАВАЕМОЙ бд)      string
 ; tableName  - default:Currency_Rates    (имя СОЗДАВАЕМОЙ таблицы) string
 
 [settings]
