@@ -59,3 +59,7 @@ password   = "";
 dbName     = "PHP_Project";
 tableName  = "Currency_Rates";
 ```
+
+
+https://user-images.githubusercontent.com/96653165/231143296-660f1a51-d928-4ac7-8a97-d8a160b79860.mp4
+
